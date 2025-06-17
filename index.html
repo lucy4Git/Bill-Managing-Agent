@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bill Management System</h1>
+        </header>
+        
+        <main>
+            <section class="upload-section">
+                <h2>Upload Bills</h2>
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png" alt="upload" class="upload-icon">
+                        <p>Drag and drop bill images here or</p>
+                        <button class="upload-btn" id="uploadBtn">Choose Files</button>
+                        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                    </div>
+                </div>
+                <div id="uploadedFiles" class="uploaded-files"></div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Expense Analysis</h2>
+                <div class="summary-container">
+                    <div class="total-expenses">
+                        <h3>Total Expenditure</h3>
+                        <div class="amount" id="totalAmount">$0.00</div>
+                    </div>
+                    <div class="category-breakdown">
+                        <h3>Category Breakdown</h3>
+                        <div id="categoryList" class="category-list"></div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+                <div class="alerts" id="alertsContainer">
+                    <h3>Alerts</h3>
+                    <div id="alertsList"></div>
+                </div>
+            </section>
+        </main>
+
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processing your bills...</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
